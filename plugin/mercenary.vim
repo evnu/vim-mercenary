@@ -209,6 +209,8 @@ endfunction
 
 function! s:Buffer_winleave(bufnr) abort
   execute getwinvar(bufwinnr(a:bufnr), 'mercenary_bufwinleave')
+  " Sometimes in terminal vim, the screen should be redrawn after closing a window.
+  redraw!
 endfunction
 
 augroup mercenary_buffer
